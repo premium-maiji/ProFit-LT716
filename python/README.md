@@ -25,3 +25,10 @@ Example:
 ```sh
 python3 python/fitpro_notify.py --help
 ```
+
+Common examples:
+
+```sh
+python3 python/fitpro_notify.py --scan --all
+python3 python/fitpro_notify.py --auto-send --target-name LT716 --app sms --text "HELLO"
+```

@@ -1,20 +1,26 @@
 # FitProSender
 
-iPhoneからLT716へFitPro互換BLEパケットで任意文字を送る最小アプリです。
+A minimal iOS app for sending FitPro-compatible BLE notification text to an
+LT716 watch.
+
+Pair the watch in iOS Bluetooth settings first. Then open the app, tap
+`Connect`, wait until the status becomes connected, and tap `Send`.
 
 ## Build
 
-```bash
+```sh
 cd FitProSender
 xcodegen generate
 open FitProSender.xcodeproj
 ```
 
-実機で使うため、Xcodeで `Signing & Capabilities` のTeamを設定してください。
-Team IDは個人情報扱いのため、プロジェクトには保存していません。
-SimulatorではCoreBluetoothの実機BLE接続は確認できません。
+Set your own Team in Xcode under `Signing & Capabilities` before building for a
+real iPhone. The project intentionally does not store a development team ID.
+
+The iOS Simulator cannot test the real BLE watch connection.
 
 ## Notes
 
-- 通知モードは `command=0x12,key=0x12` を送ります。
-- LT716ファームによっては日本語UTF-8本文を表示できない可能性があります。
+- The app sends FitPro notification packets with `command=0x12,key=0x12`.
+- Some LT716 firmware versions may not render non-ASCII UTF-8 text correctly.
+- The target watch name is fixed to `LT716`.
