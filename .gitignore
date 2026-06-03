@@ -1,0 +1,12 @@
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+*.apk
+
+FitProSender/build/
+*.xcuserstate
+**/xcuserdata/
+python/.fitpro_notify_state.json
+python/__pycache__/
+jadx-out/
